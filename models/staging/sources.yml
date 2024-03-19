@@ -1,0 +1,220 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: >
+      The tables below contain information coming from the adventure works database.
+    tables:
+      - name: brands
+        description: "A starter dbt model"
+        columns:
+          - name: brand_id
+            description: "Unique brand identifier"
+            tests:
+              - unique
+              - not_null
+          - name: brand_name
+            description: "Name of product brands"
+            tests:
+              - not_null
+
+      - name: categories
+        description: "A starter dbt model"
+        columns:
+          - name: category_id
+            description: "Unique category identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: category_name
+            description: "Product category name"
+            tests:
+              - not_null
+
+      - name: customers
+        description: "Table with customer information"
+        columns:
+          - name: customer_id
+            description: "Unique customer identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: first_name
+            description: "Customer's first name"
+
+          - name: last_name
+            description: "Customer's last name"
+
+          - name: phone
+            description: "Customer's phone"
+
+          - name: email
+            description: "Customer's email"
+
+          - name: street
+            description: "Customer's street"
+
+          - name: city
+            description: "Customer's city"
+
+          - name: state
+            description: "Customer's state"
+
+          - name: zip_code
+            description: "Customer's zip code"
+
+      - name: order_items
+        description: "Detailed order table"
+        columns:
+          - name: order_id
+            description: "Unique order items identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: item_id
+            description: "Item identifier"
+
+          - name: product_id
+            description: "Product identifier"
+
+          - name: quantity
+            description: "Quantity of products sold"
+
+          - name: list_price
+            description: "Values ​​of products sold"
+
+          - name: discount
+            description: "Discount applied to products sold"
+
+      - name: orders
+        description: "Sales table"
+        columns:
+          - name: order_id
+            description: "Unique orders identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: customer_id
+            description: "Customer identification number."
+
+          - name: order_status
+            description: "Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled"
+
+          - name: order_date
+            description: "Dates the sales order was created."
+
+          - name: required_date
+            description: "Date of request"
+
+          - name: shipped_date
+            description: "Date the order was shipped to the customer."
+
+          - name: store_id
+            description: "Store identification number."
+
+          - name: staff_id
+            description: "Staff identification number."
+
+      - name: products
+        description: "Table with product information"
+        columns:
+          - name: product_id
+            description: "Unique products identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: product_name
+            description: "Product's name"
+
+          - name: brand_id
+            description: "Brand identification number."
+
+          - name: category_id
+            description: "Category identification number."
+
+          - name: model_year
+            description: "Product model year"
+
+          - name: list_price
+            description: "Product value"
+
+      - name: staffs
+        description: "Table with staffs information"
+        columns:
+          - name: staff_id
+            description: "Unique staff identifier"
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: "Staff's first name"
+
+          - name: last_name
+            description: "Staff's last name"
+
+          - name: email
+            description: "Staff's email"
+
+          - name: phone
+            description: "Staff's phone"
+
+          - name: active
+            description: "status if active"
+
+          - name: store_id
+            description: "Store identification number."
+
+          - name: manager_id
+            description: "Staff manager code"
+
+      - name: stocks
+        description: "Table with stocks information"
+        columns:
+          - name: store_id
+            description: "Store identifier"
+            tests:
+              - not_null
+
+          - name: product_id
+            description: "Product identifier"
+            tests:
+              - not_null
+
+          - name: quantity
+            description: "Quantity of products in stock"
+
+      - name: stores
+        description: "Table with stores information"
+        columns:
+          - name: store_id
+            description: "Store identifier"
+            tests:
+              - unique
+              - not_null
+
+          - name: store_name
+            description: "Store name"
+
+          - name: phone
+            description: "Store phone"
+
+          - name: email
+            description: "Store email"
+
+          - name: street
+            description: "Store street"
+
+          - name: city
+            description: "Store city"
+
+          - name: state
+            description: "Store state"
+
+          - name: zip_code
+            description: "Store zipcode"

@@ -1,0 +1,6 @@
+
+target/
+dbt_packages/
+logs/
+my-project-desafio-copilot-104da6b5499e.json
+venv/
