@@ -9,22 +9,22 @@ orders_table as (
 )
 , juncao as (
     select 
-        orders_table.order_id
-        , orders_table.customer_id      
-        , orders_table.order_status
-        , orders_table.order_date
-        , orders_table.required_date
-        , orders_table.shipped_date
-        , orders_table.store_id
-        , orders_table.staff_id
-        , order_items.item_id
-        , order_items.product_id
-        , order_items.quantity
-        , order_items.list_price
-        , order_items.discount
+        orders_table.order_id as orderId
+        , orders_table.customer_id as customerId  
+        , orders_table.order_status as orderStatus
+        , orders_table.order_date as orderDate
+        , orders_table.required_date as requiredDate
+        , orders_table.shipped_date as ShippedDate
+        , orders_table.store_id as storeId
+        , orders_table.staff_id as staffId
+        , order_items.item_id as itemId
+        , order_items.product_id as productId
+        , order_items.quantity as quantity
+        , order_items.list_price as listPrice
+        , order_items.discount as discont
     from orders_table
     left join order_items
         on orders_table.order_id = order_items.order_id
 )
-SELECT *
+select *
 from juncao
