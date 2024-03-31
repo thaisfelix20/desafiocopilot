@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: fact_salesorderitems
+    description: Fact table with record of items sold.
+    columns: 
+      - name: Sk_SalesOrderItems
+        description: The fact table surrogate key.
+        testes:
+          - not_null
+          - unique   
+
+      - name: Sk_staffStore
+        description: Staff Store dimension surrogate key.
+        testes:
+          - not_null
+          - unique  
+          
+      - name: Sk_stockProducts
+        description: Stock products store dimension surrogate key.
+        testes:
+          - not_null
+          - unique  
+
+      - name: Sk_customerId
+        description: Customer dimension surrogate key.
+        testes:
+          - not_null
+          - unique  
+
+      - name: orderId
+        description: Order identifier code.
+        tests:
+          - not_null
+
+      - name: customerId
+        description: Customer's Code.
+
+      - name: orderStatus
+        description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled.
+
+      - name: orderDate
+        description: Dates the sales order was created.
+
+      - name: requiredDate
+        description: Date of request.
+
+      - name: shippedDate
+        description: Date the order was shipped to the customer.
+
+      - name: storeId
+        description: Store identification number.        
+
+      - name: staffId
+        description: Staff identification number.   
+
+      - name: itemId
+        description: Item identifier.        
+
+      - name: productId
+        description: Product identifier.   
+
+      - name: quantity
+        description: Quantity of products sold.   
+
+      - name: listPrice
+        description: Values of products sold.        
+
+      - name: discont
+        description: Discount applied to products sold.   
