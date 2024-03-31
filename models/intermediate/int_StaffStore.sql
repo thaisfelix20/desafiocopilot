@@ -10,10 +10,16 @@ staffs as (
 , juncao as (
     select 
         staffs.*
-        , store.*
+        , stores.store_name as nameStore
+        , stores.phone as phoneStore
+        , stores.email as emailStore
+        , stores.street
+        , stores.city
+        , stores.state
+        , stores.zip_code
     from staffs
     left join stores
-        on staff.store_id = store.store_id
+        on staffs.store_id = stores.store_id
 )
 SELECT *
 from juncao
