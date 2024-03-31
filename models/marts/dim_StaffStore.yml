@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: dim_StaffStore
+    description: >
+      The table contains staff information, such as staff name, email, telephone number, 
+      as well as information on the corresponding stores for each staff.
+    columns: 
+      - name: Sk_staffStore
+        description: The surrogate key staff store.
+        testes:
+          - not_null
+          - unique    
+
+      - name: staffId
+        description: Unique staff identifier.
+        tests:
+          - not_null
+
+      - name: staffName
+        description: Staff's name.
+
+      - name: staffEmail
+        description: Staff's email.
+
+      - name: staffPhone
+        description: Staff's phone.
+
+      - name: staffActive
+        description: status if active.
+
+      - name: storeId
+        description: Store identification number.
+
+      - name: managerId
+        description: Staff manager code.        
+
+      - name: storeName
+        description: Store name.   
+
+      - name: storePhone
+        description: Store phone.
+
+      - name: storeEmail
+        description: Store email.        
+
+      - name: storeStreet
+        description: Store street.
+
+      - name: storeCity
+        description: Store city.
+
+      - name: storeState
+        description: Store state.        
+
+      - name: storeZipCode
+        description: Store zipcode.                         

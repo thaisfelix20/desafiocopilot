@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_StockProducts
+    description: Table with product information, such as product category, model year, values and quantity in stock.
+    columns: 
+      - name: Sk_stockProducts
+        description: The surrogate key customer code
+        testes:
+          - not_null
+          - unique    
+
+      - name: productId
+        description: Unique products identifier.
+        tests:
+          - not_null
+
+      - name: productName
+        description: Product's name.
+
+      - name: productModelYear
+        description: Product model year.
+
+      - name: productListPrice
+        description: Product value.
+
+      - name: productCategoryName
+        description: Category identification number.
+
+      - name: productBrandName
+        description: Name of product brands.
+
+      - name: storeId
+        description: Store identifier.        
+
+      - name: stocksQuantity
+        description: Quantity of products in stock.   
