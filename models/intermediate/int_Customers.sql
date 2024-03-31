@@ -5,14 +5,14 @@ customers as (
 )
 , treatingCustomers as (
     select
-        customer_id
+        customer_id as customerId
         , (first_name || ' ' || last_name) as customerName
-        , email as emailCustomer
-        , phone as phoneCustomer
-        , street as streetCustomer
-        , city as cityCustomer
-        , state as stateCustomer
-        , zip_code as ZipCodeCustomer
+        , email as customerEmail
+        , phone as customerPhone
+        , street as customerStreet
+        , city as customerCity
+        , state as customerState
+        , zip_code as customerZipCode
     from customers
 )
 select *
