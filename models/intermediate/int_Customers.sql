@@ -5,14 +5,15 @@ customers as (
 )
 , treatingCustomers as (
     select
-        staff_id
+        customer_id
         , (first_name || ' ' || last_name) as customerName
         , email as emailCustomer
         , phone as phoneCustomer
-        , active
-        , store_id
-        , manager_id
+        , street as streetCustomer
+        , city as cityCustomer
+        , state as stateCustomer
+        , zip_code as ZipCodeCustomer
     from customers
 )
-SELECT *
+select *
 from treatingCustomers
