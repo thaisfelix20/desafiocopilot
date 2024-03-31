@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Table with customer information.
+    columns: 
+      - name: Sk_customerId
+        description: The surrogate key customer code
+        testes:
+          - not_null
+          - unique    
+
+      - name: customerId
+        description: Unique customer code
+        tests:
+          - not_null
+
+      - name: customerName
+        description: Customer's full name
+
+      - name: customerEmail
+        description: Customer's email.
+
+      - name: customerPhone
+        description: Customer's phone.
+
+      - name: customerStreet
+        description: Customer's street.
+
+      - name: customerCity
+        description: Customer's city.
+
+      - name: customerState
+        description: Customer's state.        
+
+      - name: customerZipCode
+        description: Customer's zip code.   
