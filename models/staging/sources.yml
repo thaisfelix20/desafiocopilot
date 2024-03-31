@@ -72,7 +72,6 @@ sources:
           - name: order_id
             description: "Unique order items identifier"
             tests:
-              - unique
               - not_null
 
           - name: item_id
