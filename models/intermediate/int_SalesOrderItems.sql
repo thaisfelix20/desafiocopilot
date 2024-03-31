@@ -14,7 +14,7 @@ orders_table as (
         , orders_table.order_status as orderStatus
         , orders_table.order_date as orderDate
         , orders_table.required_date as requiredDate
-        , orders_table.shipped_date as ShippedDate
+        , orders_table.shipped_date as shippedDate
         , orders_table.store_id as storeId
         , orders_table.staff_id as staffId
         , order_items.item_id as itemId

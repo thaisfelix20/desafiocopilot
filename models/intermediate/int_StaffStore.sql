@@ -10,7 +10,7 @@ staffs as (
 , juncao as (
     select 
         staffs.staff_id as staffId
-        , (staffs.first_name || ' ' || staffs.last_name) as  StaffName
+        , (staffs.first_name || ' ' || staffs.last_name) as staffName
         , staffs.email as staffEmail
         , staffs.phone as staffPhone
         , staffs.active as staffActive
