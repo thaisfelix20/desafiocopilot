@@ -20,14 +20,14 @@ categories as (
 )
 , juncao as (
 	select 
-		products.product_id
-		, products.product_name
-		, products.model_year
-		, products.list_price
-		, categories.category_name
-		, brands.brand_name
-		, stocks.store_id
-		, stocks.quantity as quantity_stocks
+		products.product_id as productId
+		, products.product_name as productName
+		, products.model_year as productModelYear
+		, products.list_price as productListPrice
+		, categories.category_name as productCategoryName
+		, brands.brand_name as productBrandName
+		, stocks.store_id as storeId
+		, stocks.quantity as stocksQuantity
 	from products
 	left join categories
 		on products.category_id = categories.category_id
