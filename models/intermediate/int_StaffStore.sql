@@ -9,17 +9,23 @@ staffs as (
 )
 , juncao as (
     select 
-        staffs.*
-        , stores.store_name as nameStore
-        , stores.phone as phoneStore
-        , stores.email as emailStore
-        , stores.street
-        , stores.city
-        , stores.state
-        , stores.zip_code
+        staffs.staff_id as staffId
+        , (staffs.first_name || ' ' || staffs.last_name) as  StaffName
+        , staffs.email as staffEmail
+        , staffs.phone as staffPhone
+        , staffs.active as staffActive
+        , staffs.store_id as storeId
+        , staffs.manager_id as managerId
+        , stores.store_name as storeName
+        , stores.phone as storePhone
+        , stores.email as storeEmail
+        , stores.street as storeStreet
+        , stores.city as storeCity
+        , stores.state as storeState
+        , stores.zip_code as storeZipCode
     from staffs
     left join stores
         on staffs.store_id = stores.store_id
 )
-SELECT *
+select *
 from juncao
