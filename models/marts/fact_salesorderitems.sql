@@ -17,7 +17,21 @@ customers as (
 )
 , juncao as (
     select 
-        SalesOrderItems.*
+        SalesOrderItems.orderId
+        , SalesOrderItems.customerId  
+        , SalesOrderItems.orderStatus
+        , SalesOrderItems.orderDate
+        , SalesOrderItems.requiredDate
+        , SalesOrderItems.shippedDate
+        , SalesOrderItems.storeId
+        , SalesOrderItems.staffId
+        , SalesOrderItems.itemId
+        , SalesOrderItems.productId
+        , (SalesOrderItems.quantity * SalesOrderItems.listPrice) as TotalBruto
+        , ((SalesOrderItems.quantity * SalesOrderItems.listPrice) * (1 - SalesOrderItems.discont)) as TotalLiquido
+        , SalesOrderItems.quantity
+        , SalesOrderItems.listPrice
+        , SalesOrderItems.discont        
         , customers.Sk_customerId
         , StaffStore.Sk_staffStore
         , StockProducts.Sk_stockProducts

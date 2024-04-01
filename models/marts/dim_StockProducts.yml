@@ -6,7 +6,7 @@ models:
     columns: 
       - name: Sk_stockProducts
         description: The surrogate key customer code
-        testes:
+        tests:
           - not_null
           - unique    
 

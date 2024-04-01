@@ -6,27 +6,36 @@ models:
     columns: 
       - name: Sk_SalesOrderItems
         description: The fact table surrogate key.
-        testes:
+        tests:
           - not_null
           - unique   
 
       - name: Sk_staffStore
         description: Staff Store dimension surrogate key.
-        testes:
+        tests:
           - not_null
           - unique  
+          - relationships:
+              to: ref('dim_StaffStore')
+              field: Sk_staffStore
           
       - name: Sk_stockProducts
         description: Stock products store dimension surrogate key.
-        testes:
+        tests:
           - not_null
           - unique  
+          - relationships:
+              to: ref('dim_StockProducts ')
+              field: Sk_stockProducts          
 
       - name: Sk_customerId
         description: Customer dimension surrogate key.
-        testes:
+        tests:
           - not_null
           - unique  
+          - relationships:
+              to: ref('dim_customers')
+              field: Sk_customerId               
 
       - name: orderId
         description: Order identifier code.
@@ -38,7 +47,10 @@ models:
 
       - name: orderStatus
         description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled.
-
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6]
+              quote: false
       - name: orderDate
         description: Dates the sales order was created.
 
@@ -49,7 +61,11 @@ models:
         description: Date the order was shipped to the customer.
 
       - name: storeId
-        description: Store identification number.        
+        description: Store identification number. 
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3]
+              quote: false               
 
       - name: staffId
         description: Staff identification number.   

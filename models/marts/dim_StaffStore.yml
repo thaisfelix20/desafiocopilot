@@ -8,7 +8,7 @@ models:
     columns: 
       - name: Sk_staffStore
         description: The surrogate key staff store.
-        testes:
+        tests:
           - not_null
           - unique    
 

@@ -2,18 +2,24 @@ version: 2
 
 models:
   - name: dim_customers
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - Sk_customerId
+          - customerId  
     description: Table with customer information.
     columns: 
       - name: Sk_customerId
         description: The surrogate key customer code
-        testes:
+        tests:
           - not_null
-          - unique    
-
+          - unique
+  
       - name: customerId
         description: Unique customer code
         tests:
           - not_null
+          - unique
 
       - name: customerName
         description: Customer's full name
