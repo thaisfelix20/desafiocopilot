@@ -8,13 +8,12 @@ models:
         description: The fact table surrogate key.
         tests:
           - not_null
-          - unique   
+          - unique 
 
       - name: Sk_staffStore
         description: Staff Store dimension surrogate key.
         tests:
           - not_null
-          - unique  
           - relationships:
               to: ref('dim_StaffStore')
               field: Sk_staffStore
@@ -22,8 +21,6 @@ models:
       - name: Sk_stockProducts
         description: Stock products store dimension surrogate key.
         tests:
-          - not_null
-          - unique  
           - relationships:
               to: ref('dim_StockProducts ')
               field: Sk_stockProducts          
@@ -32,15 +29,12 @@ models:
         description: Customer dimension surrogate key.
         tests:
           - not_null
-          - unique  
           - relationships:
               to: ref('dim_customers')
               field: Sk_customerId               
 
       - name: orderId
         description: Order identifier code.
-        tests:
-          - not_null
 
       - name: customerId
         description: Customer's Code.

@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+
+  - name: total_bruto__total_liquido__quantidade_vendas
+    label: Valor total bruto, liquido e quantidade de vendas para cada produto             
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual a diferença de total bruto, total liquido e quantidade de produtos vendidos?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+      - ref('dim_StockProducts')
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech

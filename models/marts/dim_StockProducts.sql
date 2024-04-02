@@ -6,7 +6,7 @@ StockProducts as (
 )
 , GeneratingSK as (
     select
-        MD5(CAST(CONCAT(productId, storeId) AS BYTES)) as Sk_stockProducts
+        CAST((CONCAT(productId,'-', storeId)) AS string) as Sk_stockProducts
         , *
     from StockProducts
 )

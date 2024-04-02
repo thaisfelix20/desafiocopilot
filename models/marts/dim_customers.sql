@@ -6,7 +6,7 @@ customers as (
 )
 , GeneratingSK as (
     select
-        md5(cast(customerId as string)) as Sk_customerId
+        cast(CONCAT(customerId,'-', customerId) as string) as Sk_customerId
         , *
     from customers
 )

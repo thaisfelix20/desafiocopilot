@@ -14,7 +14,10 @@ orders_table as (
         , orders_table.order_status as orderStatus
         , orders_table.order_date as orderDate
         , orders_table.required_date as requiredDate
-        , orders_table.shipped_date as shippedDate
+        , case 
+            when orders_table.shipped_date = 'NULL' then null
+            else orders_table.shipped_date
+          END as shippedDate        
         , orders_table.store_id as storeId
         , orders_table.staff_id as staffId
         , order_items.item_id as itemId

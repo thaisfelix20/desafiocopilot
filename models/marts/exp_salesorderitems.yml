@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+
+  - name: quantidade_vendas_por_ano_mes
+    label: Quantidade de produtos vendidos por mês e ano            
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual a diferença por anos e meses da quantidade vendida de produtos?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech

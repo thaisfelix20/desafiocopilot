@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+
+  - name: total_bruto_clientes
+    label: Valor total e quantidade comprada por cliente              
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual cliente gerou mais receita?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+      - ref('dim_customers')
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech

@@ -6,7 +6,7 @@ StaffStore as (
 )
 , GeneratingSK as (
     select
-        md5(cast(staffId as string)) as Sk_staffStore
+        cast(CONCAT(staffId,'-', staffId) as string) as Sk_staffStore
         , *
     from StaffStore
 )

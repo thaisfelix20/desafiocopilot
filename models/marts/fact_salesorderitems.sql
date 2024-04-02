@@ -46,7 +46,7 @@ customers as (
 )
 , GeneratingSK as (
     select
-        MD5(CAST(CONCAT(orderId, itemId) as BYTES)) as Sk_SalesOrderItems
+        CAST(CONCAT(orderId,'-', itemId) as string) as Sk_SalesOrderItems
         , *
     from juncao
 )

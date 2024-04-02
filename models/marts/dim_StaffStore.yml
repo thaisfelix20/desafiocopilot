@@ -2,6 +2,11 @@ version: 2
 
 models:
   - name: dim_StaffStore
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - Sk_staffStore
+          - staffId      
     description: >
       The table contains staff information, such as staff name, email, telephone number, 
       as well as information on the corresponding stores for each staff.

@@ -1,0 +1,53 @@
+version: 2
+
+exposures:
+
+  - name: total_bruto_vendas_funcionario
+    label: Valor total das vendas feitas pelos funcionários              
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual funcionário contribuiu mais com as vendas?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+      - ref('dim_StaffStore')
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech
+
+  - name: quantidade_produtos_marca
+    label: Quantidade de produtos por marca              
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual marca tem mais produtos na loja?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+      - ref('dim_StaffStore')
+
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech
+
+  - name: valor_bruto_vendido_estado
+    label: Valor bruto por Estado            
+    type: dashboard                        
+    maturity: low                          
+    url: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link      
+    description: >
+      Qual estado com maior valor bruto de produtos vendidos?
+
+    depends_on:                             
+      - ref('fact_salesorderitems')
+      - ref('dim_StaffStore')
+
+
+    owner:
+      name: Thaís Santos
+      email: thais.santos@indicium.tech      
