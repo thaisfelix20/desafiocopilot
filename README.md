@@ -7,9 +7,7 @@ Try running the following commands:
 - dbt test
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Entregas:
+- Diagrama conceitual do data warehouse em formato pdf: https://drive.google.com/file/d/1eJyLFgix7qcm249EVo9PuBvkvZr71KGN/view?usp=sharing
+- Apresentação dos dados, arquivo pbix: https://drive.google.com/file/d/1IwuekWeLuMusZVx8I12-FJcY5jIRIHEe/view?usp=drive_link
+
